@@ -9,16 +9,27 @@
         <meta name="description"  content="Prueba1">
     </head>
     <body>
-        <!-- Generamos una etiqueta con un id para localizarla-->> 
-        <p id="output" >
-        <!-- Creamos la etiqueta script(Guion)-->
-        <!-- Con tipo por supuesto texto js  y usamos un nuevo atributo llamado src.-->
-        <!-- Basicamente nos permite localizar el archivo Js y llamarlo. -->
+
+        <p id="saludo" >
         <script type="text/javascript" src = "ejemplo.js"></script>
-        <!-- Normalmente en estos tipos de casos se utiliza cuando el archivo de Js, es bastante complejo y/o se usa
-        en varias paginas HTML. Es decir que esas paginas van a tener en comun ese archivo Js y poder utilizar sus 
-        funciones.-->
-        <!-- Siguente ejemplo 3 -> -->
+        <!-- Existe el caso del ejemplo 3, basicamente juntamos lo que hicimos en el ejemplo 2 del archivo anterior y
+        le agregamos al mas que es lo siguente. -->
+        <script> 
+            let nombreDeUsuario = prompt('userName');
+            if (nombreDeUsuario != ''){
+                document.getElementById('saludo').innerHTML = `Hola ${nombreDeUsuario}`;
+            }else{
+                nombreDeUsuario = prompt("No te conozco. Escribe tu nombre:");
+                if(nombreDeUsuario != '' && nombreDeUsuario != null){
+                    nombreDeUsuario = nombreDeUsuario;
+                    console.log("Welcome", nombreDeUsuario);
+                }
+            }
+        </script>
+        <!-- Bueno en este caso tenes 2 cosas, una es que la paginas HTML van a compartir y tener un comun un archivo Js que
+             "ejemplo.js" que esta en el primer script. 
+             Pero en el 2 script, solo el "ejemplo3.html2 va a tener codigo interno js.
+        -->
         </p>
     </body>
 </html>
