@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="mensaje"></p>
+    <script type="text/javascript">
+        //
+        const hora = new Date().getHours();
+        let mensaje;
+
+        if(hora < 13) mensaje = "Buenos Dias" ;
+        else if(hora < 21) mensaje = "Buenas Tardes";
+        else if(hora < 24) mensaje = "Buenas Noches";
+        
+        document.getElementById('mensaje').innerHTML = mensaje + " " + " " + hora;
+
+    </script>
+</body>
+</html>
