@@ -5,6 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--Agregamos las clases de estilo con la etiqueta style-->
+    <style type ="text/css">
+        .mañana{
+            background-color: #A0EEF0;
+            color: #971D78;
+        }
+        .tarde{
+            background-color: #47B8FE;
+            color: #DCFE24;
+        }
+        .noche{
+            background-color: #FA8F6F;
+            color: #971D78;
+        }
+        .madrugada{
+            background-color: #0A0D2C;
+            color: #FFFFFF;
+        }
+    </style>
 </head>
 <body>
     <p id="mensaje"></p>
@@ -12,12 +31,26 @@
         //
         const hora = new Date().getHours();
         let mensaje;
-
-        if(hora < 13) mensaje = "Buenos Dias" ;
-        else if(hora < 21) mensaje = "Buenas Tardes";
-        else if(hora < 24) mensaje = "Buenas Noches";
-        
+        let nombreDeEstilo;
+        if(hora < 13) {
+            mensaje = "Buenos Dias" ;
+            nombreDeEstilo = 'mañana';
+        }
+        else if(hora < 21){
+            mensaje = "Buenas Tardes";
+            nombreDeEstilo = 'tarde';
+        }
+        else if(hora < 24){
+            mensaje = "Buenas Noches";
+            nombreDeEstilo = 'noche';
+        }
+        else{
+            mensaje = 'Hola';
+            nombreDeEstilo = 'madrugada';
+        }
+        //Para cambiar su contenido usamos la propiedad innerHTML.
         document.getElementById('mensaje').innerHTML = mensaje + " " + " " + hora;
+        document.body.className = nombreDeEstilo;
 
     </script>
 </body>
